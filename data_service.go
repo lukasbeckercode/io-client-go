@@ -155,10 +155,10 @@ func (s *DataService) retrieve(command string) (*Data, *Response, error) {
 	}
 
 	var data Data
-	resp, err := s.client.Do(req, &data)
-	if err != nil {
+	resp, _ := s.client.Do(req, &data)
+	/*if err != nil {
 		return nil, resp, err
-	}
+	}*/
 
 	return &data, resp, nil
 }
