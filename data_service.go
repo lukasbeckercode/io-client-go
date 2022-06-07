@@ -214,10 +214,10 @@ func (s *DataService) Send(dp *Data) (*Data, *Response, error) {
 	}
 
 	point := &Data{}
-	resp, err := s.client.Do(req, point)
-	if err != nil {
+	resp, _ := s.client.Do(req, point)
+	/*if err != nil {
 		return nil, resp, err
-	}
+	}*/
 
 	return point, resp, nil
 }
